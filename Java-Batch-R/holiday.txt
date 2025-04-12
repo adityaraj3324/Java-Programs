@@ -1,0 +1,153 @@
+1. What is Java?
+ans. Java is a programming language and computing platform first released by Sun Microsystems in 1995. 
+It is designed to be simple to use and to work across different types of computers without having to change the code. 
+Java is a popular choice for developing applications, from mobile apps to large-scale enterprise systems. 
+One of its key features is the ability to run the same code on different devices, which is made possible by the Java Virtual Machine (JVM). 
+Java is also known for its strong security features, making it a good option for web-based applications.
+
+
+2. What are the differences between C++ and Java?
+ans. Here are some differences between C++ and Java:
+
+- Platform Dependency: C++ is a platform-dependent language, which means that the program written in C++ needs to be compiled on every platform you want it to run. On the other hand, Java is platform-independent due to its "write once, run anywhere" feature, because of the Java Virtual Machine (JVM).
+
+- Memory Management: In C++, memory management is done manually by the programmer using pointers, and you have to allocate and deallocate memory by yourself. In Java, memory management is handled automatically by the garbage collector, which frees up memory that is no longer in use.
+
+- Multiple Inheritance: C++ supports multiple inheritance, where a class can inherit from more than one class. Java doesn't support multiple inheritance directly to avoid complexity and errors, but you can achieve it using interfaces.
+
+- Syntax: Although C++ and Java share similar syntax, there are differences. For example, C++ uses pointers extensively, whereas Java does not use pointers directly, it manages memory with references.
+
+- Use Cases: C++ is often used in system programming, game development, and applications that require high performance. Java is more commonly used in web development, mobile applications (especially Android apps), and large enterprise-level systems.
+
+- Standard Library: C++ has a Standard Template Library (STL) which is quite powerful but can be complex to use. Java has a more extensive and easier to use set of built-in libraries, especially for things like networking, database connections, and GUI applications.
+
+- Performance: Generally, C++ is faster than Java because it is closer to hardware and allows low-level manipulation. Java is a bit slower because of the overhead introduced by the JVM, but it provides easier development and portability.
+
+
+3. List the features of Java Programming language.
+ans. Here are some features of Java programming language:
+
+- Platform Independent: Write once, run anywhere (WORA) with the help of Java Virtual Machine (JVM).
+- Object-Oriented: Everything in Java is based on objects and classes.
+- Simple and Easy to Learn: Syntax is straightforward and similar to C++ but without complex features like pointers.
+- Secure: Provides built-in security features like bytecode verification and runtime checking.
+- Robust: Strong memory management and exception handling make it reliable.
+- Multithreaded: Supports concurrent execution of code, useful for performance.
+- High Performance: Uses Just-In-Time (JIT) compilers to improve speed.
+- Distributed: Facilitates the development of distributed applications with its networking capabilities.
+- Dynamic: Can adapt to an evolving environment, supporting dynamic memory allocation and runtime loading of classes.
+
+
+4. What is JVM ,JRE , JDK and List the difference between them.
+ans. - JVM (Java Virtual Machine):
+  - Executes Java bytecode and enables platform independence.
+  - Converts bytecode into machine-specific code.
+  - Provides runtime environment for Java applications.
+
+- JRE (Java Runtime Environment):
+  - Includes JVM and standard libraries.
+  - Provides environment to run Java applications, but not to develop them.
+  - Does not include development tools like compilers.
+
+- JDK (Java Development Kit):
+  - Includes JRE, development tools like compiler (`javac`), and debugger.
+  - Used for developing and compiling Java applications.
+  - Necessary for writing and testing Java programs.
+
+Differences:
+- JVM is the engine that runs Java code.
+- JRE is JVM + libraries for running Java applications.
+- JDK is JRE + tools for developing Java programs.
+
+
+5. What is the output of the following Java program?
+class Test
+{
+public static void main (String args[])
+{
+System.out.println(10 + 20 + "Javatpoint");
+System.out.println("Javatpoint" + 10 + 20);
+}
+}
+ans. Output: 
+	30Javatpoint
+	Javatpoint1020
+
+6. What is the output of the following Java program?
+class Test
+{
+public static void main (String args[])
+{
+System.out.println(10 * 20 + "Javatpoint");
+System.out.println("Javatpoint" + 10 * 20);
+}
+}
+ans. Output: 
+	200Javatpoint
+	Javatpoint200
+
+7. What is the output of the following Java program?
+class Test
+{
+
+public static void main (String args[])
+{
+for(int i=0; 0; i++)
+{
+System.out.println("Hello Javatpoint");
+}
+}
+}
+ans. The provided Java program will result in a compilation error.
+
+
+8. What is OOP’s ?
+ans. - OOP stands for Object-Oriented Programming.
+- Uses objects and classes to structure software.
+- Encapsulation: Bundles data and methods together.
+- Inheritance: Allows classes to inherit properties from other classes.
+- Polymorphism: Lets methods do different things based on the object.
+- Abstraction: Simplifies complex systems by modeling real-world entities.
+
+
+9. What is Class ?
+ans. - A class is a blueprint or template in object-oriented programming.
+- It defines the structure and behavior of objects.
+- Includes properties (variables) and methods (functions).
+- Describes what objects created from the class can have and do.
+
+
+10. What are Objects ?
+ans. - Objects are instances of classes.
+- They represent real-world entities or concepts.
+- Each object has its own state (attributes) and behavior (methods).
+- Created using a class as a template.
+
+
+11. What is the constructor?
+ans. - A constructor is a special method in a class.
+- It initializes new objects of that class.
+- Has the same name as the class and no return type.
+- Called automatically when an object is created.
+
+
+12. How many types of constructors are used in Java?
+ans. - Default Constructor: Automatically provided if no constructors are defined; initializes objects with default values.
+- Parameterized Constructor: Allows setting initial values for object attributes when the object is created.
+- Copy Constructor: (Not built-in but can be defined) Creates a new object as a copy of an existing object.
+
+
+13. What is the Purpose of default Constructor ?
+ans. - Initializes objects with default values.
+- Provides a no-argument way to create an instance of a class.
+- Ensures that all instance variables are set to default values if no other constructor is provided.
+
+
+14. Why Parametrise Constructor is Used ?
+ans. - Allows setting initial values for object attributes at the time of object creation.
+- Provides a way to initialize objects with specific values rather than default ones.
+- Facilitates more flexible and customized object creation.
+
+
+15. Can we execute a program without main() method?
+ans. No, a Java program cannot be executed without a main() method.

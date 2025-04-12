@@ -1,0 +1,258 @@
+1. Basic Variable Declaration and Initialization:
+* Write a Java program to declare and initialize variables of different data types
+(int, float, double, char, boolean). Print their values.
+
+code: 
+
+class Ad{
+    public static void main(String[]args){
+        int a=  12;
+        float b=12.1f;
+        double c= 55.789;
+        char d= 'a';
+        boolean e=true;
+        System.out.println(a);
+        System.out.println(b);
+
+        System.out.println(c);
+
+        System.out.println(d);
+
+        System.out.println(e);
+    }
+}
+----------------------------------------------------------------------------------------
+2. Type Conversion:
+* Write a Java program to demonstrate type casting. Convert an int to a double and a
+double to an int, and print the results.
+
+code: 
+
+ class Ad {
+    public static void main(String[] args) {
+
+        int v1 = 11;
+        double v2 = v1;
+        System.out.println("Int to Double:");
+        System.out.println("Original int value: " + v1);
+        System.out.println("Converted to double: " + v2);
+
+
+        double v3 = 11.99;
+        int v4 = (int) v3;
+        System.out.println("\nDouble to Int:");
+        System.out.println("Original double value: " + v3);
+        System.out.println("Converted to int: " + v4);
+    }
+}
+
+----------------------------------------------------------------------------------------------------
+3. Constant Variables:
+* Write a Java program to declare a constant variable using the final keyword. Try
+changing its value and observe the error.
+
+code: 
+
+class Ad{
+    public static void main(String[] args) {
+        
+        final int a = 100;
+        System.out.println("The value of a is: " + a);
+
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------
+4. Arithmetic Operations:
+* Write a Java program that takes two integer inputs from the user and performs
+addition, subtraction, multiplication, division, and modulus operations. Print the
+results.
+
+code: 
+
+import java.util.Scanner;
+
+ class Ad{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first integer: ");
+        float num1 = scanner.nextInt();
+
+        System.out.print("Enter the second integer: ");
+        float num2 = scanner.nextInt();
+
+        float addition = num1 + num2;
+        float subtraction = num1 - num2;
+        float multiplication = num1 * num2;
+        float division = num1 / num2;
+        float modulus = num1 % num2;
+
+        System.out.println("Results:");
+        System.out.println("Addition: " + addition);
+        System.out.println("Subtraction: " + subtraction);
+        System.out.println("Multiplication: " + multiplication);
+        System.out.println("Division: " + division);
+        System.out.println("Modulus: " + modulus);
+
+    }
+}
+
+------------------------------------------------------------------------------------------------
+5. Compound Assignment Operators:
+* Write a Java program to demonstrate the use of compound assignment operators (+=,
+-=, *=, /=, %=). Initialize a variable and apply these operators, printing the results
+after each operation.
+
+code: 
+
+ class Ad{
+    public static void main(String[] args) {
+        
+        int num = 10;
+
+        System.out.println("Initial value: " + num);
+        num += 5; 
+        System.out.println("After += 5: " + num);
+
+        num -= 3;
+        System.out.println("After -= 3: " + num);
+
+        num *= 2; 
+        System.out.println("After *= 2: " + num);
+
+        num /= 4; 
+        System.out.println("After /= 4: " + num);
+        
+        num %= 3; 
+        System.out.println("After %= 3: " + num);
+    }
+}
+
+--------------------------------------------------------------------------------------------------
+6. Increment and Decrement Operators:
+* Write a Java program to demonstrate the use of pre-increment and post-increment, as
+well as pre-decrement and post-decrement operators. Print the values before and after
+applying these operators.
+
+code:
+
+ class Ad{
+    public static void main(String[] args) {
+     
+        int i = 10;
+
+        System.out.println("Initial value: " + i);
+        System.out.println("Pre-increment (++i): " + ++i); // 
+        System.out.println("Value after pre-increment: " + i);
+        i = 10;
+
+        System.out.println("Post-increment (i++): " + i++); // 
+        System.out.println("Value after post-increment: " + i);
+
+        i = 10;
+
+        System.out.println("Pre-decrement (--i): " + --i); // 
+        System.out.println("Value after pre-decrement: " + i);
+
+        i = 10;
+
+        System.out.println("Post-decrement (i--): " + i--); // 
+        System.out.println("Value after post-decrement: " + i);
+    }
+}
+
+-------------------------------------------------------------------------------------------
+7. String Manipulation:
+* Write a Java program to declare and initialize a string variable. Perform operations
+such as concatenation, finding the length of the string, and extracting a substring.
+Print the results.
+
+code: 
+
+ class Ad{
+    public static void main(String[] args) {
+            String a="My name is ";
+            String b="Aditya";
+            String d= a.concat(b);
+            System.out.println("Concatenation : " + d);
+           int c = a.length();
+            System.out.println("String length : " + c);
+            String sub = d.substring(11,17);
+            System.out.println("Substring: "+ sub);
+          }
+}
+
+--------------------------------------------------------------------------------------------
+8. Boolean Operations:
+* Write a Java program to declare and initialize boolean variables. Demonstrate the
+use of logical operators (&&, ||, !). Print the results of these operations.
+
+code:
+
+class Ad{
+    public static void main(String[] args) {
+       
+        boolean isalive = true;
+        boolean isdead = false;
+
+        boolean andResult = isalive && isdead;
+        System.out.println("Logical AND (isalive && isdead): " + andResult);
+
+        boolean orResult = isalive || isdead;
+        System.out.println("Logical OR (isalive || isdead): " + orResult);
+
+        boolean notResult = !isalive;
+        System.out.println("Logical NOT (!isalive): " + notResult);
+    }
+}
+
+-----------------------------------------------------------------------------------------------
+9. Character Data Type:
+* Write a Java program to declare and initialize a char variable. Demonstrate how to
+use arithmetic operations on characters (e.g., incrementing a char). Print the
+results.
+
+code:
+
+public class Ad{
+    public static void main(String[] args) {
+     
+        char letter = 'A';
+
+        System.out.println("Original char value: " + letter);
+
+        letter++;
+        System.out.println("After incrementing: " + letter);
+
+        letter--;
+        System.out.println("After decrementing: " + letter);
+
+        letter = (char) (letter + 5);
+        System.out.println("After adding 5: " + letter);
+
+        letter = (char) (letter - 3);
+        System.out.println("After subtracting 3: " + letter);
+    }
+}
+
+-----------------------------------------------------------------------------------------------
+10. Floating-Point Precision:
+* Write a Java program to compare the precision of float and double. Declare and
+initialize a float and a double with the same value, then print them to observe any
+differences in precision.
+
+code: 
+
+public class Ad{
+    public static void main(String[] args) {
+     
+     float a= 1.9235897890f;
+     double b=1.9235897890d;
+     System.out.println("Float value: "+a);
+     
+     System.out.println("Double value: "+b);
+    }
+}
+
+------------------------------------------------------------------------------------------------

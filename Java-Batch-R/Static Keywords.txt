@@ -1,0 +1,308 @@
+Static Keywords
+1. Static Variable
+* Define a class Counter with a static variable count. Increment this variable
+in the constructor. Create multiple objects of the class and print the count to
+observe its behavior.
+code: 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        System.out.println("Static count: ");
+        var co = new Counter();
+        var co1 = new Counter();
+        var co2 = new Counter();
+        var co3 = new Counter();
+        co1.display();
+    }
+}
+class Counter{
+    static int counter;
+    Counter(){
+        counter++;
+        System.out.println("Count: "+counter);
+    }
+    void display(){
+        System.out.println("Final Count: "+counter);
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+2. Static Method
+* Create a class MathUtil with a static method square(int number) that returns
+the square of a number. Call this method without creating an instance of the class.
+code: 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        System.out.println("Static Method: ");
+        System.out.println(MathUtil.square(5));
+    }
+}
+class MathUtil{
+   static int square(int number){
+        return number*number;
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+3. Static Block
+* Write a class Initializer with a static block that initializes a static
+variable. Print the value of this variable from the main method.
+code: 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        System.out.println("Static Block: "+ Initializer.name);
+    }
+}
+class Initializer{
+    static String name;
+   static{
+        name = "Aditya";
+       System.out.println("Static Block called.");
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+4. Static and Non-Static Members
+* Define a class Example with both static and non-static variables and methods.
+Show how to access them from the main method.
+code: 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        var e1 = new Example();
+        Example.counter();
+        e1.name = "Aditya";
+        e1.number=1234;
+        e1.display();
+    }
+}
+class Example{
+    static int count;
+    int number;
+    String name;
+   static int counter(){
+       count++;
+       System.out.println("Static Method called.\nCounter: "+count);
+       return 0;
+    }
+    void display(){
+        System.out.println("Number: "+number+"\nName: "+name);
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+5. Static Method Overloading
+* Create a class Overload with overloaded static methods print(int number) and
+print(String text). Demonstrate calling these methods from the main method.
+code: 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        var o1 = new Overload();
+        Overload.print(12);
+        Overload.print("My name is Aditya.");
+    }
+}
+class Overload{
+    static int number;
+    static String text;
+   static int print(int num) {
+       number = num;
+       System.out.println("Integer Number: " + number);
+       return 0;
+   }
+    static String print(String te){
+    text = te;
+    System.out.println("String text: "+text);
+    return "0";
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+6. Static Method and Instance Variable
+* Explain why static methods cannot access instance variables directly by
+writing a class Demo with a static method that tries to access a non-static
+variable.
+code: 
+
+class Demo {
+    int instanceVar = 10;
+
+    static void staticMethod() {
+        System.out.println(instanceVar);
+    }
+
+    public static void main(String[] args) {
+        Demo.staticMethod();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------
+7. Static Method and this Keyword
+* Show why the this keyword cannot be used in a static method by writing a class
+Example and trying to access this within a static method.
+code: 
+
+class Example {
+    int instanceVar = 20;
+
+    static void staticMethod() {
+        System.out.println(this.instanceVar);
+    }
+
+    public static void main(String[] args) {
+        Example.staticMethod();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------
+8. Static Variable Initialization
+* Write a class Config with a static variable initialized within a static block.
+Demonstrate how the static block executes before the main method.
+code: 
+
+class Config {
+    static String configValue;
+
+    static {
+        configValue = "Initialized in static block";
+        System.out.println("Static block executed.");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Value of configValue: " + configValue);
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+9. Static Final Variable
+* Define a class Constants with a static final variable PI. Show that this
+variable cannot be changed once initialized.
+code: 
+
+class Constants {
+    static final double PI = 3.14159;
+
+    public static void main(String[] args) {
+        System.out.println("PI: " + PI);
+	PI = 3.14 ; // this will result in compilation error.
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+10. Static Import
+* Use the static import feature to import and use static methods from the
+java.lang.Math class directly in your code.
+code: 
+
+import static java.lang.Math.*;  
+class Main {
+    public static void main(String[] args) {
+        double radius = 5.0;
+        
+        double area = PI * pow(radius, 2);  
+        double circumference = 2 * PI * radius;
+
+        System.out.println("Area of the circle: " + area);
+        System.out.println("Circumference of the circle: " + circumference);
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+11. Static Nested Class
+* Create a class Outer with a static nested class Nested. The nested class
+should have a method display() that prints a message. Instantiate the nested class
+from the main method and call its method.
+code: 
+
+class Main {
+    public static void main(String[] args) {
+        Outer.Nested n1 = new Outer.Nested();  
+        n1.display(); 
+    }
+}
+
+class Outer {
+    static class Nested {
+        void display() {
+            System.out.println("Hello.");
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+12. Static Method in Inheritance
+* Define a base class Parent with a static method show(). Create a subclass
+Child and hide the show()method. Demonstrate method hiding by calling the methods
+from different class references.
+code: 
+
+
+------------------------------------------------------------------------------------------------------------------
+13. Static Members in Interfaces
+* Define an interface Utility with a static method log(String message).
+Implement this interface in a class and call the static method from the main
+method.
+code: 
+
+class Main {
+    public static void main(String[] args) {
+        Utility.log("Aditya");
+    }
+}
+interface Utility{
+    static void log(String message){
+        System.out.println("Static method called from interface: Hello, "+message);
+    }
+}
+class Call implements Utility{}
+------------------------------------------------------------------------------------------------------------------
+14. Static Field with Initialization Order
+* Write a class InitializationOrder with static and instance fields, and
+demonstrate the order in which they are initialized.
+code: 
+
+class InitializationOrder {
+    static String staticField = "Static field initialized";
+    String instanceField = "Instance field initialized";
+
+    static {
+        System.out.println("Static block executed");
+    }
+
+    {
+        System.out.println("Instance block executed");
+    }
+
+    InitializationOrder() {
+        System.out.println("Constructor executed");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(staticField);
+        InitializationOrder obj = new InitializationOrder();
+        System.out.println(obj.instanceField);
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+15. Static Method vs Instance Method
+* Create a class Comparison with both static and instance methods display().
+Show the difference in how they are called and accessed.
+code: 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+
+        var e1 = new Comparison();
+        e1.display();
+        Comparison.Display();
+    }
+}
+class Comparison{
+    static void Display(){
+        System.out.println("Static Method called.");
+    }
+    void display(){
+        System.out.println("Instance Method is called.");
+    }
+}
+------------------------------------------------------------------------------------------------------------------

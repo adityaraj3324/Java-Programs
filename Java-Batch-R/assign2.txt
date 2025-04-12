@@ -1,0 +1,500 @@
+1. Basic Arithmetic Operations:
+* Write a Java program to take two numbers from the user and perform addition,
+subtraction, multiplication, division, and modulus operations. Print the results.
+
+code: 
+
+import java.util.Scanner;
+
+ class Ad{
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int number1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int number2 = scanner.nextInt();
+
+        int sum = number1 + number2;
+        System.out.println("Addition: " + number1 + " + " + number2 + " = " + sum);
+
+        int difference = number1 - number2;
+        System.out.println("Subtraction: " + number1 + " - " + number2 + " = " + difference);
+
+        int product = number1 * number2;
+        System.out.println("Multiplication: " + number1 + " * " + number2 + " = " + product);
+
+        
+            int quotient = number1 / number2;
+            System.out.println("Division: " + number1 + " / " + number2 + " = " + quotient);
+        
+       
+            int remainder = number1 % number2;
+            System.out.println("Modulus: " + number1 + " % " + number2 + " = " + remainder);
+       
+
+    }
+}
+
+-------------------------------------------------------------------------------------------
+2. Comparison Operators:
+* Write a Java program to compare two numbers entered by the user using comparison
+operators (==, !=, >, <, >=, <=). Print the results of these comparisons.
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int number1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int number2 = scanner.nextInt();
+        
+        System.out.println("Comparison Results:");
+        
+        System.out.println(number1 + " == " + number2 + ": " + (number1 == number2));
+        
+        System.out.println(number1 + " != " + number2 + ": " + (number1 != number2));
+        
+        System.out.println(number1 + " > " + number2 + ": " + (number1 > number2));
+       
+        System.out.println(number1 + " < " + number2 + ": " + (number1 < number2));
+        
+        System.out.println(number1 + " >= " + number2 + ": " + (number1 >= number2));
+        
+        System.out.println(number1 + " <= " + number2 + ": " + (number1 <= number2));
+
+    }
+}
+
+----------------------------------------------------------------------------------------
+3. Logical Operators:
+* Write a Java program that demonstrates the use of logical operators (&&, ||, !)
+by evaluating some boolean expressions and printing the results.
+
+code: 
+
+class Ad{
+    public static void main(String[] args) {
+       
+        boolean x = true;
+        boolean y = false;
+
+        System.out.println("AND Operator (&&) Result:");
+        System.out.println("x && y: " + (x && y)); 
+        
+        System.out.println("\nOR Operator (||) Result:");
+        System.out.println("x || y: " + (x || y)); 
+        
+        System.out.println("\nNOT Operator (!) Results:");
+        System.out.println("!x: " + (!x));  
+        System.out.println("!y: " + (!y)); 
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+4. Even or Odd:
+* Write a Java program to check if a given number is even or odd using the modulus
+operator.
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+
+    }
+}
+
+-----------------------------------------------------------------------------------------
+5. Largest of Three Numbers:
+* Write a Java program to find the largest of three numbers using nested if-else
+statements.
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+        System.out.print("Enter the third number: ");
+        int num3 = scanner.nextInt();
+
+        int largest;
+
+        if (num1 >= num2) {
+            if (num1 >= num3) {
+                largest = num1;
+            } else {
+                largest = num3;
+            }
+        } else {
+            if (num2 >= num3) {
+                largest = num2;
+            } else {
+                largest = num3;
+            }
+        }
+
+        System.out.println("The largest number is: " + largest);
+
+    }
+}
+
+-----------------------------------------------------------------------------------------
+6. Leap Year Check:
+* Write a Java program to check if a given year is a leap year. Use logical
+operators to combine multiple conditions.
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+
+    }
+}
+
+-----------------------------------------------------------------------------------------
+7. Grading System:
+* Write a Java program that takes a percentage input from the user and prints the
+corresponding grade using if-else-if conditions. (e.g., 90-100: A, 80-89: B, etc.)
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the percentage: ");
+        int percentage = scanner.nextInt();
+
+        if (percentage >= 90 && percentage <= 100) {
+            System.out.println("Grade: A");
+        } else if (percentage >= 80 && percentage < 90) {
+            System.out.println("Grade: B");
+        } else if (percentage >= 70 && percentage < 80) {
+            System.out.println("Grade: C");
+        } else if (percentage >= 60 && percentage < 70) {
+            System.out.println("Grade: D");
+        } else if (percentage >= 50 && percentage < 60) {
+            System.out.println("Grade: E");
+        } else if (percentage >= 0 && percentage < 50) {
+            System.out.println("Grade: F");
+        } else {
+            System.out.println("Invalid percentage. Please enter a value between 0 and 100.");
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+8. Simple Calculator:
+* Write a Java program to implement a simple calculator using switch-case. The
+program should take two numbers and an operator (+, -, *, /) as input and perform the
+corresponding operation.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.print("Enter the operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        double result;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case '/':
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                break;
+            default:
+                System.out.println("Error: Invalid operator.");
+                break;
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+9. Positive, Negative, or Zero:
+* Write a Java program to check if a number is positive, negative, or zero using
+if-else statements.
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        double number = scanner.nextDouble();
+         if (number > 0) {
+            System.out.println("The number is positive.");
+        } else if (number < 0) {
+            System.out.println("The number is negative.");
+        } else {
+            System.out.println("The number is zero.");
+        }
+
+    }
+}
+
+-----------------------------------------------------------------------------------------
+10. Vowel or Consonant:
+* Write a Java program to check if a given character is a vowel or a consonant
+using switch-case.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+
+         System.out.print("Enter a character: ");
+        char character = scanner.next().charAt(0);
+         switch (character) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                System.out.println(character + " is a vowel.");
+                break;
+            default:
+                  System.out.println(character + " is a consonant.");
+                break;
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+11. Divisibility Check:
+
+* Write a Java program to check if a number is divisible by both 5 and 11 using the
+logical AND operator.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+          System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        if (number % 5 == 0 && number % 11 == 0) {
+            System.out.println(number + " is divisible by both 5 and 11.");
+        } else {
+            System.out.println(number + " is not divisible by both 5 and 11.");
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+12. Palindrome Check:
+* Write a Java program to check if a given number is a palindrome using if-else
+statements.
+
+code: 
+
+import java.util.Scanner;
+
+public class Ad{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        int temp = number,sum = 0,rev;
+        
+
+        while (number != 0) {
+             rev = number % 10; 
+            sum = sum * 10 + rev;
+            number /= 10;
+        }
+        if (temp == sum) {
+            System.out.println(temp + " is a palindrome.");
+        } else {
+            System.out.println(temp + " is not a palindrome.");
+        }
+
+    }
+}
+
+-----------------------------------------------------------------------------------------
+13. Quadratic Equation Roots:
+* Write a Java program to find the roots of a quadratic equation (ax^2 + bx + c =
+0) using the quadratic formula and if-else conditions to handle different cases (real
+and distinct, real and equal, or complex roots).
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter coefficient a: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Enter coefficient b: ");
+        double b = scanner.nextDouble();
+
+        System.out.print("Enter coefficient c: ");
+        double c = scanner.nextDouble();
+
+        double discriminant = b * b - 4 * a * c;
+
+        if (discriminant > 0) {
+            double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            System.out.println("The roots are real and distinct.");
+            System.out.println("Root 1: " + root1);
+            System.out.println("Root 2: " + root2);
+        } else if (discriminant == 0) {
+            double root = -b / (2 * a);
+            System.out.println("The roots are real and equal.");
+            System.out.println("Root: " + root);
+        } else {
+           
+            double realPart = -b / (2 * a);
+            double imaginaryPart = Math.sqrt(-discriminant) / (2 * a);
+            System.out.println("The roots are complex and different.");
+            System.out.println("Root 1: " + realPart + " + " + imaginaryPart + "i");
+            System.out.println("Root 2: " + realPart + " - " + imaginaryPart + "i");
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+14. Eligibility for Voting:
+* Write a Java program to check if a person is eligible to vote. The program should
+take the person's age as input and use an if-else statement to determine eligibility
+(age >= 18).
+
+code: 
+
+import java.util.Scanner;
+
+class Ad{
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+       if (age >= 18) {
+            System.out.println("You are eligible to vote.");
+        } else {
+            System.out.println("You are not eligible to vote.");
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+15. Number Guessing Game:
+* Write a Java program that generates a random number between 1 and 100 and allows
+the user to guess the number. The program should provide feedback if the guess is too
+high, too low, or correct using if-else statements. Implement a loop to allow multiple
+guesses until the user guesses correctly.
+
+code: 
+
+import java.util.*;
+class Ad {
+    public static void main(String[] args) {
+        Random r = new Random();
+        int num1 = r.nextInt(100) + 1; 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Guess a random number between 1 to 100: ");
+        
+        
+        int num2 = sc.nextInt();
+        System.out.println("Random Number: " + num1);
+        System.out.println("Guessed Number: " + num2);
+
+        while (num2 != num1) {
+            if (num2 < num1) {
+                System.out.println("Your guess is too low. Try again.");
+            } else if (num2 > num1) {
+                System.out.println("Your guess is too high. Try again.");
+            }
+            num2 = sc.nextInt();
+        }
+
+        System.out.println("Yay! You guessed it right.\nRandom Number: " + num1 + "\nGuessed Number: " + num2);
+    }
+}
+
+-----------------------------------------------------------------------------------------

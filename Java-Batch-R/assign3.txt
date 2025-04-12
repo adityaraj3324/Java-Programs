@@ -1,0 +1,384 @@
+1. Sum of Natural Numbers:
+* Write a Java program to calculate the sum of the first n natural numbers using a
+while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter n number to provide sum of natural numbers: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum=0,i=1;
+        while(i<=n){
+            sum = sum + i;
+            i++;
+        }
+        System.out.println("Sum: " +sum);
+    }
+}
+----------------------------------------------------------------------------------------------------------
+2. Factorial Calculation:
+* Write a Java program to find the factorial of a given number using a while loop.
+
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find factorial: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int fact=1,i=1;
+        while(i<=n){
+            fact = fact * i;
+            i++;
+        }
+        System.out.println("Factorial " +fact);
+    }
+}
+---------------------------------------------------------------------------------------------------------
+3. Reverse a Number:
+* Write a Java program to reverse the digits of a given number using a while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find reverse of it: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int rev,sum=0;
+        while(n!=0){
+            rev = n%10;
+            sum = sum*10 + rev;
+            n=n/10;
+        }
+        System.out.println("Reverse number: " +sum);
+    }
+}
+---------------------------------------------------------------------------------------------------------
+4. Palindrome Check:
+* Write a Java program to check if a given number is a palindrome using a while
+loop and if-else conditions.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find if it is paindrome or not: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int rev,sum=0,temp=n;
+        while(n!=0){
+            rev = n%10;
+            sum = sum*10 + rev;
+            n=n/10;
+        }
+        if(sum==temp)
+        System.out.println("Yes, The number is palindrome");
+        else
+         System.out.println("No, The number is not palindrome");
+    }
+}
+---------------------------------------------------------------------------------------------------------
+5. Sum of Digits:
+* Write a Java program to find the sum of the digits of a given number using a
+while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find sum of its digits: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int rev,sum=0,temp=n;
+        while(n!=0){
+            rev = n%10;
+            sum = sum + rev;
+            n=n/10;
+        }
+       
+        System.out.println("The sum of digits of the number: "+sum);
+    }
+}
+---------------------------------------------------------------------------------------------------------
+6. Fibonacci Sequence:
+* Write a Java program to print the Fibonacci sequence up to a given number of
+terms using a while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find its fibonacci sequence: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println("Fibonacci sequence: ");
+        int f=0,s=1,t,i=1;
+        while(i<=n){
+           System.out.println(f);
+           t=f+s;
+           f=s;
+           s=t;
+           i++;
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------
+7. Greatest Common Divisor (GCD):
+* Write a Java program to find the GCD of two numbers using the Euclidean algorithm
+and a while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = sc.nextInt();
+
+        while (num2 != 0) {
+            int temp = num2;
+            num2 = num1 % temp;
+            num1 = temp;
+        }
+
+        System.out.println("The GCD is: " + num1);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
+8. Number Guessing Game:
+* Write a Java program that generates a random number between 1 and 100 and allows
+the user to guess the number. Use a while loop to give the user multiple attempts
+until they guess correctly. Provide feedback if the guess is too high or too low using
+if-else conditions.
+
+code: 
+
+import java.util.*;
+class Ad {
+    public static void main(String[] args) {
+        Random r = new Random();
+        int num1 = r.nextInt(100) + 1; 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Guess a random number between 1 to 100: ");
+        
+        
+        int num2 = sc.nextInt();
+        System.out.println("Guessed Number: " + num2);
+
+        while (num2 != num1) {
+            if (num2 < num1) {
+                System.out.println("Your guess is too low. Try again.");
+            } else if (num2 > num1) {
+                System.out.println("Your guess is too high. Try again.");
+            }
+            num2 = sc.nextInt();
+        }
+
+        System.out.println("Yay! You guessed it right.\nRandom Number: " + num1 + "\nGuessed Number: " + num2);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
+9. Prime Number Check:
+* Write a Java program to check if a given number is prime using a while loop and
+if-else conditions.
+
+code: 
+
+
+import java.util.*;
+class Ad {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number to check if it is prime or not: ");
+    
+        int num = sc.nextInt();
+        int i=2;
+        if(num <=1)
+	 System.out.println("Not prime number");
+	else if(num == 2)
+	System.out.println("Prime Number.");
+        else{
+	while (num>i) {
+            if (num%i==0) {
+                System.out.println("Not prime number");
+                break;
+            } else if (i==(num-1)) {
+                System.out.println("Prime Number.");
+                break;
+            }
+            i++;
+        }
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
+10. Armstrong Number Check:
+* Write a Java program to check if a given number is an Armstrong number using a
+while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find if it is armstrong or not: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int rev,sum=0,temp=n;
+        while(n!=0){
+            rev = n%10;
+            sum = sum + rev*rev*rev;
+            n=n/10;
+        }
+        if(sum==temp)
+        System.out.println("Yes, The number is armstrong");
+        else
+         System.out.println("No, The number is not armstrong");
+    }
+}
+---------------------------------------------------------------------------------------------------------
+11. Count Digits in a Number:
+* Write a Java program to count the number of digits in a given number using a
+while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find the number of digits: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int rev,sum=0,temp=n;
+        while(n!=0){
+            rev = n%10;
+            sum++;
+            n=n/10;
+        }
+         System.out.println("Number of digits: "+sum);
+    }
+}
+---------------------------------------------------------------------------------------------------------
+12. Sum of Even Numbers:
+* Write a Java program to calculate the sum of all even numbers between 1 and n
+using a while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number to find the number of digits: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum=0,i=1;
+        while(i<=n){
+            if(i%2==0){
+            sum= sum+i;
+            }
+            i++;
+        }
+         System.out.println("Sum of even numbers: "+sum);
+    }
+}
+---------------------------------------------------------------------------------------------------------
+13. Multiplication Table:
+* Write a Java program to print the multiplication table of a given number using a
+while loop.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter a number for multiplication table: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i=1;
+        while(i<=10){
+            System.out.println(n+" X "+i+" = "+n*i);
+            i++;
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------
+14. Square Root Approximation:
+* Write a Java program to approximate the square root of a number using the
+Babylonian method (also known as Heron's method) with a while loop.(Hint :- Ignore the
+decimal value )
+
+code: 
+
+import java.util.*;
+class Ad{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number to find its square root: ");
+        int num = sc.nextInt();
+
+        int g = num / 2;
+        int bG;
+
+        while (true) {
+            bG = (g + num / g) / 2;
+
+            if (g == bG) {
+                break;
+            }
+
+            g = bG;
+        }
+
+        System.out.println("Approximate square root (ignoring decimal): " + g);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
+15. Collatz Conjecture:
+* Write a Java program to implement the Collatz conjecture. Start with a number n.
+If n is even, divide it by 2; if n is odd, multiply it by 3 and add 1. Continue the
+process using a while loop until n becomes 1. Print the sequence of numbers.
+
+code: 
+
+import java.util.*;
+class Ad{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number for the Collatz conjecture: ");
+        int n = sc.nextInt();
+         System.out.println("Collatz conjecture: ");
+        while (n!=1) {
+            if(n%2==0){
+                n=n/2;
+                 System.out.println(n);
+            }
+            else{
+                n=(n*3)+1;
+                 System.out.println(n);
+            }
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------

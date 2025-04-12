@@ -1,0 +1,249 @@
+Functions In Java
+1. Basic Function
+* Write a method greet that takes a String name as a parameter and prints a
+greeting message.
+code: 
+
+class Greet{
+    public static void main(String args[]){
+        greet("Aditya");
+    }
+    public static void greet(String name){
+        System.out.println("Good morning, "+name);
+    }
+}
+-----------------------------------------------------------------------------------------------------
+2. Function with Return Type
+* Create a method add that takes two integers as parameters and returns their
+sum.
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter two integer values for sum: ");
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int sum =  sum(num1,num2);
+        System.out.println(sum);
+    }
+    public static int sum(int a,int b){
+        return a+b;
+    }
+}
+
+--------------------------------------------------------------------------------------------------------
+3. Function Overloading
+* Define overloaded methods print that can accept either a String or an int
+parameter and prints the respective value.
+
+code: 
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter two integer values for sum: ");
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int sum1 =  sum(num1,num2);
+        double sum2 =  sum(3.4d,0.1d);
+        float sum3 =  sum(4.5f,5.5f);
+        String ad = sum("Aditya ","Sahu");
+        System.out.println("Sum(int): "+sum1);
+        System.out.println("Sum(double): "+sum2);
+        System.out.println("Sum(float): "+sum3);
+        System.out.println("Sum(String): "+ad);
+    }
+    public static int sum(int a,int b){
+        return a+b;
+    }
+    public static String sum(String a,String b){
+        return a+b;
+    }
+    public static float sum(float a,float b){
+        return a+b;
+    }
+    public static double sum(double a,double b){
+        return a+b;
+    }
+}
+---------------------------------------------------------------------------------------------------------
+4. Function with Multiple Parameters
+* Write a method calculateArea that takes two parameters, length and width, and
+returns the area of a rectangle.
+code:
+
+import java.util.Scanner;
+class Ad{
+    public static void main(String[] args) {
+        System.out.println("Enter length and width of the rectangle: ");
+        Scanner sc = new Scanner(System.in);
+        double length = sc.nextDouble();
+        double width = sc.nextDouble();
+        double area =  calculateArea(length,width);
+        System.out.println("Area: "+area+"cm sq");
+        
+    }
+    public static double calculateArea(double a,double b){
+        return a*b;
+    }
+   
+}
+--------------------------------------------------------------------------------------------------------
+5. Function with Default Parameters
+* Java does not support default parameters directly, but write a method greet
+that has two overloads: one that takes only a name and another that takes both a
+name and a greeting message.
+code:
+
+class Ad{
+    public static void main(String[] args) {
+       String naam = greet("Aditya");
+       String greeting = greet("Good Morning, ","Aditya");
+        System.out.println(naam);
+        System.out.println(greeting);
+    }
+    public static String greet(String name){
+        return name;
+    }
+   public static String greet(String message,String name){
+        return message+name;
+    }
+}
+---------------------------------------------------------------------------------------------------------
+6. Function with Variable Arguments
+* Define a method sum that can take any number of integer arguments and returns
+their sum using var args.
+code:
+
+public class Add{
+    public static int sum(int... numbers) {
+        int total = 0;
+        for (int num : numbers) {
+            total += num; 
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum(1, 2, 3));         
+        System.out.println(sum(10, 20, 30, 40));   
+        System.out.println(sum(5));                
+        System.out.println(sum());                
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+7. Recursive Function
+* Write a recursive method factorial that calculates the factorial of a given
+integer.
+code:
+
+public class Add{
+    public static int fact(int num) {
+        if(num == 0 || num == 1)
+        return 1;
+        return num*fact(num-1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Factorial: ");         
+        System.out.println(fact(5));   
+    }
+}
+----------------------------------------------------------------------------------------------------------
+8. Function Returning an Array
+* Create a method generateFibonacci that takes an integer n and returns an array
+containing the first n Fibonacci numbers.
+code: 
+
+import java.util.Scanner;
+public class Add{
+    public static int[] generateFibonacci(int num) {
+        int first =0,second=1,third;
+        int arr[] = new int[num];
+        for(int i=0;i<num;i++){
+            arr[i]=first;
+            third=first+second;
+            first=second;
+            second=third;
+         }
+       return arr;
+    }
+    public static void main(String[] args) {
+        System.out.println("Enter a number for fibonacci series: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println("Fibonacci series: ");
+        int array[] = generateFibonacci(n);
+        for(int num : array )
+        System.out.print(num+" ");
+    }
+}
+----------------------------------------------------------------------------------------------------------
+9. Function as a Parameter
+* Write a method applyFunction that takes an integer array and a functional
+interface Operation (with a method execute(int)), and applies the operation to each
+element of the array.
+
+code:
+
+-----------------------------------------------------------------------------------------------------------
+10. Static Function
+* Define a static method convertToUpperCase that takes a String and returns it
+in uppercase.
+code:
+
+import java.util.Scanner;
+public class Add{
+    public static String convertToUpperCase(String name) {
+       return name.toUpperCase();
+    }
+    public static void main(String[] args) {
+        System.out.println("Enter a string: ");
+        Scanner sc = new Scanner(System.in);
+        String naam = sc.nextLine();
+        System.out.println("Entered string: "+ naam);
+        System.out.println("converted string: "+convertToUpperCase(naam));
+    }
+}
+--------------------------------------------------------------------------------------------------------
+11. Function with Exception Handling
+* Write a method divide that takes two integers and returns their division.
+Ensure it handles division by zero with proper exception handling.
+code: 
+
+import java.util.*;
+public class Add{
+    public static int divide(int num1,int num2){
+       try{
+           return num1/num2;
+       }
+        catch(ArithmeticException e){
+            System.out.println(e);
+            return 0;
+        }
+        
+    }
+    public static void main(String[] args) {
+        System.out.println("Enter two numbers for division: ");
+        Scanner sc = new Scanner(System.in);
+        int number1 = sc.nextInt();
+        int number2 = sc.nextInt();
+        System.out.println("Division: "+ divide(number1,number2));
+    }
+}
+--------------------------------------------------------------------------------------------------------
+12. Anonymous Function (Lambda)
+* Create a functional interface Calculator with a method calculate(int a, int
+b). Use a lambda expression to define the calculate method for addition.
+13. Function Using Streams
+* Write a method filterEvenNumbers that takes a list of integers and returns a
+list of even numbers using Java Streams.
+14. Function Returning Another Function
+* Define a method createMultiplier that takes an integer factor and returns a
+lambda expression that multiplies its input by the given factor.
+15. Recursive Function for String Reversal
+* Write a recursive method reverseString that takes a String and returns its
+reversal.

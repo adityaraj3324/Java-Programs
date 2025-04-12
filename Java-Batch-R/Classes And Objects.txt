@@ -1,0 +1,313 @@
+Classes And Objects
+1. Create a Simple Class
+* Define a class named Person with attributes name and age. Create an object of
+this class and initialize its attributes.
+code: 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var p1 = new Person();
+        p1.name = "Aditya";
+        p1.age=21;
+        p1.display();
+    }
+}
+class Person{
+    String name;
+    int age;
+    void display(){
+        System.out.println("Name: "+name+"\nAge: "+age);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------
+2. Constructor Usage
+* Write a class Car with attributes make, model, and year. Create a constructor
+to initialize these attributes. Create an object of the class using the
+constructor.
+code: 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var car1 = new Car("BMW",2024);
+        System.out.println("Model of car: "+car1.model+"\nYear of Manufacturing: "+car1.year);
+    }
+}
+class Car{
+    String model;
+    int year;
+    Car(String model,int year){
+        this.model=model;
+        this.year= year;
+        
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+Class Methods
+* Create a class Rectangle with attributes length and width. Add a method
+calculateArea() to calculate and return the area of the rectangle. Create an object
+and use it to call the method.
+code: 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var r1 = new Rectangle();
+        r1.length = 12.8f;
+        r1.width=21.34f;
+        System.out.println("Area of rectangle: "+r1.calculateArea());
+    }
+}
+class Rectangle{
+    float length,width;
+    float calculateArea(){
+        return length*width;
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------
+3. Static Members
+* Write a class Employee with a static attribute companyName and instance
+attributes name and id. Create a static method to set the company name and an
+instance method to display employee details. Demonstrate the usage of these
+methods.
+code : 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var emp = new Employee();
+        emp.name = "Aditya.";
+        emp.id=12;
+        System.out.println("Name of company: "+emp.companyname("Regex Softwares."));
+        emp.display();
+    }
+}
+class Employee{
+    static String companyName;
+    String name;
+    int id;
+    static String companyname(String cn){
+        companyName = cn;
+        return companyName;
+    }
+    void display(){
+        System.out.println("Name: "+name+"\nI'D: "+id);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+4. Object as a Parameter
+* Create a class Point with attributes x and y. Write a method distance(Point p)
+to calculate the distance between the current point and another point p. Create
+objects to test this method.
+code : 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var p1 = new Point();
+        var p2 = new Point();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter x and y coordinates for point1: ");
+        int x1 = sc.nextInt();
+        int y1 = sc.nextInt();
+        p1.x = x1;
+        p1.y = y1;
+        System.out.println("Enter x and y coordinates for point2: ");
+        int x2 = sc.nextInt();
+        int y2 = sc.nextInt();
+        p2.x = x2;
+        p2.y = y2;
+        System.out.println("Distance: "+p1.distance(p1,p2));
+        sc.close();
+    }
+}
+class Point{
+    int x,y;
+    float distance(Point po1,Point po2){
+        float dis =(float) Math.sqrt(Math.pow(po2.x-po1.x,2)+Math.pow(po2.y-po1.y,2));
+        return dis;
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+5. Object Return Type
+* Define a class Rectangle with length and width attributes. Write a method
+combine(Rectangle r) that returns a new Rectangle object representing the combined
+area of two rectangles (i.e., the sum of their areas).
+code : 
+
+class Rectangle {
+   
+    double length;
+    double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    double area() {
+        return length * width;
+    }
+
+    Rectangle combine(Rectangle r) {
+     
+        double combinedArea = this.area() + r.area();
+
+        double newLength = combinedArea / this.width;
+
+        return new Rectangle(newLength, this.width);
+    }
+
+    void display() {
+        System.out.println("Length: " + length + ", Width: " + width + ", Area: " + area());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Rectangle rect1 = new Rectangle(4, 5);
+        Rectangle rect2 = new Rectangle(6, 5);
+
+        System.out.println("Rectangle 1:");
+        rect1.display();
+        System.out.println("Rectangle 2:");
+        rect2.display();
+
+        Rectangle combinedRect = rect1.combine(rect2);
+
+        System.out.println("Combined Rectangle:");
+        combinedRect.display();
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+6. Constructor Overloading
+* Create a class Student with attributes name and rollNo. Overload the
+constructor to allow creating objects with and without initializing these
+attributes.
+code : 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var s1 = new Student("Aditya",123);
+        System.out.println("Name: "+s1.name+"\nRoll No.: "+s1.rollno);
+        var s2 = new Student();
+    }
+}
+class Student{
+    String name = "Aman";
+    int rollno = 456;
+    Student(String name,int rollno){
+        this.name = name;
+        this.rollno = rollno;
+    }
+    Student(){
+        System.out.println("Name: "+name+"\nRoll No.: "+rollno);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+7. Copy Constructor
+* Write a class Circle with attributes radius. Define a copy constructor that
+creates a new Circle object by copying the attributes of another Circle object.
+Demonstrate the usage of the copy constructor.
+code : 
+
+-------------------------------------------------------------------------------------------------------------------------------
+8. Inner Classes
+* Define a class Outer with an inner class Inner. The inner class should have a
+method showMessage() that displays a message. Create an instance of the inner class
+from the outer class and call the method.
+code : 
+
+-------------------------------------------------------------------------------------------------------------------------------
+9. Aggregation
+* Create a class Author with attributes name and email. Define a class Book that
+includes an Author object as an attribute along with book-specific attributes.
+Write methods to display the book details along with the author details.
+code : 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var author = new Author("Aditya","asahu3324@gmail.com");
+        var book = new Book("New Waves",author,123);
+        book.display();
+    }
+}
+class Author{
+    String name,email;
+    
+    Author(String name,String  email){
+        this.name = name;
+        this.email = email;
+    }
+    void display(){
+        System.out.println("Name of author: "+name+"\nEmail of author: "+email);
+    }
+}
+class Book{
+    String title;
+    int id;
+    Author author;
+    Book(String title,Author author,int id){
+        this.title = title;
+        this.author = author;
+        this.id = id;
+    }
+    void display(){
+        System.out.println("Title of book: "+title+"\nI'D of Book: "+id);
+        System.out.println("\nDetails of author: ");
+        author.display();
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+10. Composition
+* Write a class Engine with attributes type and horsepower. Define a class Car
+that includes an Engine object as an attribute. Create methods to display the car's
+engine details.
+code : 
+
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        var eng = new Engine("V12",974);
+        var car = new Car("SUV",eng);
+        car.display();
+    }
+}
+class Engine{
+    String type;
+    int horsePower;
+    
+    Engine(String type,int horsePower){
+        this.type = type;
+        this.horsePower = horsePower;
+    }
+    void display(){
+        System.out.println("Type of engine: "+type+"\nHorsePower: "+horsePower);
+    }
+}
+class Car{
+    String type;
+    Engine eng;
+
+    Car(String type,Engine eng){
+        this.type = type;
+        this.eng = eng;
+    }
+    void display(){
+        System.out.println("Type of Car: "+type);
+        System.out.println("\nDetails of engine: ");
+        eng.display();
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+11. Static Block
+* Write a class Configuration with a static block that initializes some static
+variables. Create a method to display these variables and demonstrate the static
+block execution by creating an object of the class.
+code : 
+
+-------------------------------------------------------------------------------------------------------------------------------

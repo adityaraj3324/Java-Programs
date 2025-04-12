@@ -1,0 +1,188 @@
+1. Create a class "BankAccount" with attributes account number and balance. Implement
+methods to deposit and withdraw funds, and a display method to show the account details.
+code: 
+
+
+import java.util.*;
+class Main{
+    public static void main(String []args){
+        System.out.println("Enter your Bank Account number: ");
+        Scanner sc = new Scanner(System.in); 
+        int acc = sc.nextInt();
+        BankAccount ba = new BankAccount();
+        ba.accnum = acc;
+        ba.display();
+        System.out.println("Select 'd' for deposit and 'w' for withdrawal.");
+        char opt = sc.next().charAt(0);
+        switch(opt){
+            case 'd': System.out.println("Enter amount to  deposit: ");
+                int dep = sc.nextInt();
+                ba.deposit(dep);
+                break;
+            case 'w': System.out.println("Enter amount to  withdraw: ");
+                int wd = sc.nextInt();
+                ba.withdraw(wd);
+                break;
+            default : System.out.println("Invalid Selection.");
+                break;
+        }
+        ba.display();
+    }
+}
+class BankAccount{
+    int accnum,balance = 100000;
+    void deposit(int deposit){
+        balance += deposit;
+        System.out.println("Deposit successful");
+    }
+    void withdraw(int withdraw){
+        if(balance>=withdraw){
+        balance -= withdraw;
+        System.out.println("Withdrawal successful"); 
+        }
+        else
+        System.out.println("Balance is not sufficient.");
+    }
+    void display(){
+        System.out.println("Bank Account number : "+accnum);
+        System.out.println("Balance: "+balance);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+ 2. Create a class "Person" with a static member variable "count" that keeps track of the
+number of instances created.
+code:
+
+import java.util.*;
+class Main{
+    public static void main(String []args){
+        System.out.println("Program to check number of objects created.");
+        var p1 = new Person();
+        var p2 = new Person();
+        var p3 = new Person();
+        var p4 = new Person();
+        p1.counter();
+    }
+}
+class Person{
+    static int count;
+    Person(){
+        count++;
+    }
+    void counter(){
+        System.out.println("Number of instances: "+count);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------
+3. Create a class "Time" with attributes hours and minutes. When you call time obj that
+display time in the format "hh:mm".
+code:
+
+
+import java.util.*;
+class Main{
+    public static void main(String []args){
+        System.out.println("Program to display time.");
+        System.out.println("Enter hours: ");
+        Scanner sc = new Scanner(System.in);
+        int hours = sc.nextInt();
+        System.out.println("Enter minutes: ");
+        int minutes = sc.nextInt();
+       Time t1 = new Time(hours,minutes);
+    }
+}
+class Time{
+     int hours;
+     int minutes;
+        Time(int hours,int minutes){
+            this.hours=hours;
+            this.minutes=minutes;
+            System.out.printf("Time: \"%02d:%02d\"",this.hours,this.minutes);
+        }
+}
+-------------------------------------------------------------------------------------------------------------------------
+4. Pattern
+if n = 5 print :-
+1 2 3 4 5 4 3 2 1
+1     4   4     1
+1   3       3   1
+1 2           2 1
+1               1
+code: 
+
+
+import java.util.*;
+class Main{
+    public static void main(String []args){
+        System.out.println("Enter a number: ");
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        for(int i = 1;i<=num;i++){
+            for(int j = 1;j<=num;j++){
+                if(i==1 || j==1 ||i+j==6){
+                    System.out.print(" "+j);
+                }
+                else
+                System.out.print("  ");
+            }
+            for(int j = num-1;j>0;j--){
+                if(i==1 || j==1 ||i+j==6){
+                    System.out.print(" "+j);
+                }
+                else
+                System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+5. Pattern
+if n = 5 print :-
+1 1 1 1 1
+2     2
+3   3
+4 4
+5
+4 4
+3   3
+2     2
+1 1 1 1 1
+code:
+
+import java.util.*;
+class Main{
+    public static void main(String []args){
+        System.out.println("Enter a number: ");
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        for(int i = 1;i<=num;i++){
+            for(int j = 1;j<=num;j++){
+                if(i==1 || j==1 ||i+j==6){
+                    System.out.print(i);
+                }
+                else
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+        for(int i = num-1;i>0;i--){
+            for(int j = 1;j<=num;j++){
+                if(i==1 || j==1){
+                    System.out.print(i);
+                }
+                
+                else if (i+j==6){
+                    System.out.print(i);
+                }
+                else
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+
+

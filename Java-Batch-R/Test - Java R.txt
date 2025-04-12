@@ -1,0 +1,125 @@
+Test - Java R
+(Write the test on notepad)
+
+1. Write a recursive function to print all elements of an array.
+Example:
+For an array arr = [1, 2, 3, 4, 5], the output should be :- 1 2 3 4 5
+
+code:
+
+class Test{
+ 
+    public static void printArray(int arr[],int num){
+        if(num==0) return;
+        printArray(arr,num-1);
+        System.out.print(" "+arr[num-1]);
+    }
+    
+   public static void main(String[] args) {
+        int arr[]={1, 2, 3, 4, 5};
+        printArray(arr,5);
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Write a recursive function to print all elements of an array.
+Example:
+For an array arr = [1, 2, 3, 4, 5], the output should be :- 5 4 3 2 1
+
+code: 
+
+class Test{
+ 
+    public static void printArray(int arr[],int num){
+        if(num==0) return;
+	System.out.print(" "+arr[num-1]);
+        printArray(arr,num-1);
+        
+    }
+    
+   public static void main(String[] args) {
+        int arr[]={1, 2, 3, 4, 5};
+        printArray(arr,5);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. find the first index of occurrence of a given element in an array using recursion? Write a recursive
+function that takes an array and a target value as input and returns the first index at which the
+target value occurs. If the target is not found, return -1.
+Example:
+For an array arr = [5, 3, 7, 8, 3, 9] and the target value 3, the output should be: 1
+
+code: 
+
+class Test{
+
+    public static int findIndex(int arr[],int num,int index){
+        
+        if(index==arr.length)
+            return -1;
+        if(arr[index]==num){
+	        return index;
+        }
+        
+       return findIndex(arr,num,++index);
+       
+    }
+   public static void main(String[] args) {
+        int arr[]={5, 3, 7, 8, 3, 9};
+        System.out.print(findIndex(arr,9,0));
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. find the last index of occurrence of a given element in an array using recursion? Write a recursive
+function that takes an array and a target value as input and returns the last index at which the
+target value occurs. If the target is not found, return -1
+Example:
+For an array arr = [5, 3, 7, 8, 3, 9] and the target value 3, the output should be: 4
+
+code:  
+
+class Test{
+
+    public static int findIndex(int arr[],int num,int index){
+        
+        if(index==-1)
+            return -1;
+        if(arr[index]==num){
+	        return index;
+        }
+        
+       return findIndex(arr,num,--index);
+       
+    }
+   public static void main(String[] args) {
+        int arr[]={5, 3, 7, 8, 3, 9};
+        System.out.print(findIndex(arr,3,arr.length-1));
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Write a recursive program that returns the count of how many times a target number is present in
+a given array. The function should take an array and the target number as input and return the
+count of its occurrences.
+Example:
+For an array arr = [2, 4, 3, 2, 2, 7, 8] and the target value 2, the output should be: 3
+
+code: 
+
+class Main{
+
+    public static int countTarget(int arr[],int num,int index,int count){
+        if(index==arr.length)
+            return count;
+        if(arr[index]==num){
+	        count++;
+        }
+       return countTarget(arr,num,++index,count);
+    }
+   public static void main(String[] args) {
+        int arr[]={5, 3, 7, 8, 3, 9};
+        System.out.print(countTarget(arr,3,0,0));
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

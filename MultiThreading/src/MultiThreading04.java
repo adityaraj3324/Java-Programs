@@ -1,17 +1,13 @@
 
 class ABCD extends Thread{
     public void run(){
-         System.out.println("Class Thread is running");
-         Thread t = new Thread();
-         System.out.println(t.getName());
+         System.out.println("Class Thread is running\n"+ Thread.currentThread().getName());
     }
 }
 
 class ABCDE implements Runnable{
     public void run(){
-            System.out.println("Runnable Thread is running");
-        Thread t = new Thread();
-        System.out.println(t.getName());
+            System.out.println("Runnable Thread is running\n"+ Thread.currentThread().getName());
     }
 }
 

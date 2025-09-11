@@ -14,12 +14,10 @@ class ABCDE implements Runnable{
 public class MultiThreading04 {
     public static void main(String[] args) {
         ABCD ab = new ABCD();
-        Thread th1 = new Thread(ab);
-        th1.start();
-
+        ab.start();     // No need to create an additional object of Thread class bcz it already extends it
 
         ABCDE aa = new ABCDE();
-        Thread th = new Thread(aa);
+        Thread th = new Thread(aa);     // but in case of Runnable you need to create an object for the Thread class
         th.start();
 
         System.out.println("Main Thread is running \n"+ Thread.currentThread().getName());

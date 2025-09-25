@@ -1,13 +1,10 @@
 # Introduction:
----------------
 
 This repository serves as a comprehensive collection of Java programs, ranging from core concepts like **Object-Oriented Programming (OOP)** and **Data Structures & Algorithms (DSA)** to advanced topics like **Multithreading** and **Exception Handling**.
 It is primarily used as a coding practice portfolio, demonstrating proficiency in clean code practices and the fundamental building blocks of the Java language.
 
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 # Key Topics and Code Examples:
--------------------------------
 
 The repository is organized into distinct folders, each focusing on a core area of Java development.
 

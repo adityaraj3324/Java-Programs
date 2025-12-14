@@ -2,7 +2,7 @@ Q1.
 code: 
 
 import java.util.Scanner;
-class Main{
+class PalindromeCheck{
     public static void main(String[] args) {
         System.out.println("Enter a number: ");
         Scanner sc = new Scanner(System.in);
@@ -24,7 +24,7 @@ Q2.
 code: 
 
 import java.util.Scanner;
-class Main{
+class PalindromeCheck{
     public static void main(String[] args) {
         System.out.println("Enter a number: ");
         Scanner sc = new Scanner(System.in);
@@ -58,7 +58,7 @@ Q3.
 code:
 
 import java.util.Scanner;
-class Main{
+class PalindromeCheck{
     public static void main(String[] args) {
         System.out.println("Enter a number: ");
         Scanner sc = new Scanner(System.in);
@@ -92,7 +92,7 @@ Q4.
 code:
 
 import java.util.Scanner;
-class Main{
+class PalindromeCheck{
     public static void main(String[] args) {
         System.out.println("Enter a number: ");
         Scanner sc = new Scanner(System.in);
